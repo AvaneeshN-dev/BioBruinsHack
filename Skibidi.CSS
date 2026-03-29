@@ -1,9 +1,9 @@
 /* ============================================
    GREENHOUSE DASHBOARD — Skibidi.css
-   Matched to index.html + projhack.js
+   Vintage Field Guide / Explorer's Notebook
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Caveat:wght@400;700&display=swap');
 
 *,
 *::before,
@@ -14,18 +14,20 @@
 }
 
 :root {
-    --moss: #1b4332;
-    --moss-light: #2d6a4f;
-    --sage: #a3b18a;
-    --sage-light: #c5d5a8;
-    --cream: #fefae0;
-    --cream-dark: #e9e5cc;
-    --glow: #d4e09b;
-    --bark: #3a2f1a;
-    --white: #ffffff;
-    --shadow: rgba(27, 67, 50, 0.12);
-    --shadow-strong: rgba(27, 67, 50, 0.2);
+    --moss: #2d5a27;
+    --moss-light: #3d7a35;
+    --sage: #8b9e72;
+    --sage-light: #b3c49a;
+    --cream: #f5f2e9;
+    --cream-dark: #e8e1d3;
+    --glow: #c5d4a0;
+    --bark: #4a3728;
+    --bark-light: #6b5545;
+    --white: #faf8f3;
+    --shadow: rgba(74, 55, 40, 0.12);
+    --shadow-strong: rgba(74, 55, 40, 0.22);
     --danger: #9b3d1a;
+    --stamp-green: rgba(45, 90, 39, 0.13);
 }
 
 html {
@@ -33,25 +35,39 @@ html {
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Courier Prime', 'Courier New', monospace;
     background-color: var(--cream);
     color: var(--bark);
     line-height: 1.6;
     min-height: 100vh;
     background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(163, 177, 138, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(27, 67, 50, 0.07) 0%, transparent 50%),
-        radial-gradient(ellipse at 60% 80%, rgba(163, 177, 138, 0.1) 0%, transparent 50%);
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(74, 55, 40, 0.018) 2px,
+            rgba(74, 55, 40, 0.018) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 3px,
+            rgba(74, 55, 40, 0.012) 3px,
+            rgba(74, 55, 40, 0.012) 6px
+        ),
+        radial-gradient(ellipse at 30% 50%, rgba(74, 55, 40, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse at 75% 25%, rgba(74, 55, 40, 0.03) 0%, transparent 60%);
 }
 
-/* Header */
+/* ---- Header ---- */
 .greenhouse-header {
-    background: linear-gradient(135deg, var(--moss) 0%, var(--moss-light) 100%);
+    background: linear-gradient(135deg, var(--bark) 0%, var(--bark-light) 100%);
     padding: 1.25rem 2rem;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 20px rgba(27, 67, 50, 0.3);
+    box-shadow: 0 4px 16px rgba(74, 55, 40, 0.35);
+    border-bottom: 3px double var(--sage);
 }
 
 .header-inner {
@@ -72,19 +88,19 @@ body {
 
 .logo-icon {
     font-size: 2rem;
-    filter: drop-shadow(0 0 6px rgba(212, 224, 155, 0.5));
+    filter: drop-shadow(0 0 4px rgba(139, 158, 114, 0.4));
 }
 
 .logo h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.8rem;
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
     color: var(--cream);
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .tagline {
     color: var(--sage-light);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-style: italic;
     align-self: flex-end;
     margin-bottom: 2px;
@@ -98,8 +114,10 @@ body {
 .header-nav a {
     color: var(--sage-light);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     padding: 0.3rem 0;
     border-bottom: 2px solid transparent;
     transition: all 0.3s ease;
@@ -107,10 +125,10 @@ body {
 
 .header-nav a:hover {
     color: var(--cream);
-    border-bottom-color: var(--glow);
+    border-bottom-color: var(--sage);
 }
 
-/* Intro */
+/* ---- Intro ---- */
 .dashboard-intro {
     text-align: center;
     padding: 3.5rem 2rem 2rem;
@@ -119,15 +137,15 @@ body {
 }
 
 .dashboard-intro h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 2.5rem;
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
     color: var(--moss);
     margin-bottom: 0.5rem;
 }
 
 .dashboard-intro p {
-    font-size: 1.1rem;
-    color: var(--moss-light);
+    font-size: 1rem;
+    color: var(--bark-light);
     margin-bottom: 1.5rem;
 }
 
@@ -142,16 +160,16 @@ body {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--bark);
 }
 
 .stage-icon {
     display: inline-block;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    border: 2px solid var(--moss);
+    border: 2px solid var(--bark);
 }
 
 .stage-icon.seed {
@@ -163,13 +181,13 @@ body {
 }
 
 .stage-icon.oak {
-    background: radial-gradient(circle, var(--moss) 40%, #0b2920 100%);
+    background: radial-gradient(circle, var(--moss) 40%, #1a3d16 100%);
 }
 
-/* Shared section headings */
+/* ---- Shared section headings ---- */
 .section-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 2rem;
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
     color: var(--moss);
     text-align: center;
     margin-bottom: 0.4rem;
@@ -178,13 +196,13 @@ body {
 .form-subtitle,
 .gallery-subtitle {
     text-align: center;
-    color: var(--moss-light);
-    font-size: 1rem;
+    color: var(--bark-light);
+    font-size: 0.9rem;
     font-style: italic;
     margin-bottom: 1.5rem;
 }
 
-/* Idea garden */
+/* ---- Idea garden ---- */
 .idea-garden {
     max-width: 1200px;
     margin: 0 auto;
@@ -198,57 +216,59 @@ body {
     margin-top: 1.5rem;
 }
 
-/* Cards */
+/* ---- Cards (field-guide notebook style) ---- */
 .idea-card {
     background: var(--white);
-    border-radius: 16px;
+    border: 3px double var(--bark);
+    border-radius: 2px;
     padding: 1.5rem;
-    border-left: 5px solid var(--sage);
-    box-shadow: 0 2px 12px rgba(27, 67, 50, 0.08);
+    box-shadow:
+        inset 0 0 30px rgba(74, 55, 40, 0.04),
+        2px 3px 10px rgba(74, 55, 40, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.idea-card::before {
-    content: '';
-    position: absolute;
-    top: -40px;
-    right: -40px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    opacity: 0.06;
-    pointer-events: none;
-}
-
 .idea-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(27, 67, 50, 0.15);
+    transform: translateY(-3px);
+    box-shadow:
+        inset 0 0 30px rgba(74, 55, 40, 0.04),
+        4px 6px 20px rgba(74, 55, 40, 0.18);
 }
 
+/* Stage top-border accent */
 .idea-card.seed {
-    border-left-color: #8b6914;
-}
-
-.idea-card.seed::before {
-    background: #8b6914;
+    border-top: 4px solid #8b6914;
 }
 
 .idea-card.sprout {
-    border-left-color: #7cb342;
-}
-
-.idea-card.sprout::before {
-    background: #7cb342;
+    border-top: 4px solid #7cb342;
 }
 
 .idea-card.oak {
-    border-left-color: var(--moss);
+    border-top: 4px solid var(--moss);
 }
 
-.idea-card.oak::before {
-    background: var(--moss);
+/* VERIFIED stamp for Oak cards */
+.idea-card.oak::after {
+    content: 'VERIFIED';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    font-family: 'Courier Prime', monospace;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--stamp-green);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    border: 4px solid var(--stamp-green);
+    border-radius: 6px;
+    padding: 0.15rem 0.8rem;
+    pointer-events: none;
+    z-index: 1;
+    white-space: nowrap;
 }
 
 .card-top {
@@ -271,43 +291,45 @@ body {
 }
 
 .stage-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--moss-light);
+    letter-spacing: 1.5px;
+    color: var(--bark-light);
 }
 
 .availability-badge {
-    background: var(--moss);
+    background: var(--bark);
     color: var(--cream);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    padding: 0.25rem 0.65rem;
-    border-radius: 20px;
-    letter-spacing: 0.3px;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
     white-space: nowrap;
+    text-transform: uppercase;
 }
 
 .card-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.2rem;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
     color: var(--moss);
     margin-bottom: 0.35rem;
 }
 
 .card-desc {
-    font-size: 0.9rem;
-    color: #5a5a4a;
+    font-size: 0.85rem;
+    color: var(--bark-light);
     margin-bottom: 0.5rem;
-    line-height: 1.5;
+    line-height: 1.55;
     white-space: pre-wrap;
 }
 
 .card-author {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--sage);
     margin-bottom: 0.75rem;
+    font-style: italic;
 }
 
 .resource-requests {
@@ -318,26 +340,55 @@ body {
 }
 
 .resource-tag {
-    background: linear-gradient(135deg, rgba(212, 224, 155, 0.35), rgba(163, 177, 138, 0.25));
-    color: var(--moss);
-    font-size: 0.78rem;
-    font-weight: 600;
-    padding: 0.3rem 0.7rem;
-    border-radius: 8px;
-    border: 1px solid rgba(163, 177, 138, 0.4);
-    box-shadow: 0 0 8px rgba(212, 224, 155, 0.3);
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    background: rgba(74, 55, 40, 0.07);
+    color: var(--bark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    border: 1px solid rgba(74, 55, 40, 0.2);
+    letter-spacing: 0.3px;
+    transition: background 0.2s ease;
 }
 
 .resource-tag:hover {
-    box-shadow: 0 0 16px rgba(212, 224, 155, 0.6);
-    transform: scale(1.05);
+    background: rgba(74, 55, 40, 0.12);
 }
 
-/* Gallery */
+/* ---- Sunlight Meter (leaf icons) ---- */
+.sunlight-meter {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.sunlight-meter .leaf {
+    font-size: 1rem;
+    opacity: 0.2;
+    filter: grayscale(100%);
+    transition: opacity 0.3s, filter 0.3s;
+}
+
+.sunlight-meter .leaf.lit {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.sunlight-meter-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--bark-light);
+    margin-left: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ---- Gallery ---- */
 .passion-gallery {
     background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
     padding: 3rem 2rem 4rem;
+    border-top: 2px dashed var(--bark);
+    border-bottom: 2px dashed var(--bark);
 }
 
 .gallery-grid {
@@ -349,16 +400,17 @@ body {
 }
 
 .gallery-item {
-    border-radius: 14px;
+    border: 2px solid var(--bark);
+    border-radius: 2px;
     overflow: hidden;
     background: var(--white);
-    box-shadow: 0 2px 12px rgba(27, 67, 50, 0.08);
+    box-shadow: 2px 3px 8px rgba(74, 55, 40, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-item:hover {
-    transform: translateY(-4px) rotate(-0.5deg);
-    box-shadow: 0 10px 30px rgba(27, 67, 50, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 4px 6px 18px rgba(74, 55, 40, 0.18);
 }
 
 .gallery-img {
@@ -369,28 +421,30 @@ body {
     position: relative;
     display: flex;
     align-items: flex-end;
+    filter: sepia(15%) contrast(1.05);
 }
 
 .gallery-overlay {
     width: 100%;
     padding: 0.75rem 1rem;
-    background: linear-gradient(transparent, rgba(27, 67, 50, 0.8));
+    background: linear-gradient(transparent, rgba(74, 55, 40, 0.85));
 }
 
 .gallery-label {
     color: var(--cream);
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
 }
 
 .gallery-credit {
     padding: 0.6rem 1rem;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--sage);
     font-style: italic;
 }
 
-/* Form sections */
+/* ---- Form sections ---- */
 .seed-form-section {
     max-width: 720px;
     margin: 0 auto;
@@ -402,10 +456,10 @@ body {
 #sign-in-form,
 #post-form {
     background: var(--white);
-    border-radius: 16px;
+    border: 3px double var(--bark);
+    border-radius: 2px;
     padding: 2rem;
-    border-left: 5px solid var(--sage);
-    box-shadow: 0 2px 12px rgba(27, 67, 50, 0.08);
+    box-shadow: inset 0 0 20px rgba(74, 55, 40, 0.03), 2px 3px 8px rgba(74, 55, 40, 0.08);
 }
 
 #sign-in-form,
@@ -431,10 +485,12 @@ body {
 #sign-in-form label,
 #post-form label {
     display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--moss);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--bark);
     margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
 }
 
 .form-group input,
@@ -444,14 +500,14 @@ body {
 #sign-in-form input,
 #post-form textarea {
     width: 100%;
-    padding: 0.7rem 0.8rem;
+    padding: 0.65rem 0.8rem;
     border: 2px solid var(--cream-dark);
-    border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
+    border-radius: 2px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.88rem;
     color: var(--bark);
     background: var(--cream);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
@@ -461,8 +517,8 @@ body {
 #sign-in-form input:focus,
 #post-form textarea:focus {
     outline: none;
-    border-color: var(--sage);
-    box-shadow: 0 0 8px rgba(163, 177, 138, 0.35);
+    border-color: var(--moss);
+    box-shadow: 0 0 0 3px rgba(45, 90, 39, 0.12);
 }
 
 .form-group textarea,
@@ -478,16 +534,17 @@ body {
     display: block;
     width: 100%;
     padding: 0.75rem;
-    background: linear-gradient(135deg, var(--moss) 0%, var(--moss-light) 100%);
+    background: var(--moss);
     color: var(--cream);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.9rem;
     font-weight: 700;
-    border: none;
-    border-radius: 10px;
+    border: 2px solid var(--moss);
+    border-radius: 2px;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.2s ease;
-    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.2s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .seed-submit-btn:hover,
@@ -496,7 +553,8 @@ body {
 #sign-out-button:hover,
 #post-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(27, 67, 50, 0.25);
+    box-shadow: 2px 4px 14px rgba(45, 90, 39, 0.25);
+    background: var(--moss-light);
 }
 
 .seed-submit-btn:active,
@@ -509,26 +567,30 @@ body {
 
 #sign-out-button {
     margin-top: 1rem;
-    background: linear-gradient(135deg, #5f715f 0%, #728472 100%);
+    background: var(--bark-light);
+    border-color: var(--bark-light);
+}
+
+#sign-out-button:hover {
+    background: var(--bark);
 }
 
 #account-status {
-    background: linear-gradient(135deg, rgba(163, 177, 138, 0.18), rgba(212, 224, 155, 0.2));
-    color: var(--moss);
-    border: 1px solid rgba(163, 177, 138, 0.45);
-    border-radius: 12px;
+    background: var(--white);
+    color: var(--bark);
+    border: 2px double var(--bark);
+    border-radius: 2px;
     padding: 0.9rem 1rem;
     margin-bottom: 1rem;
     font-weight: 600;
     text-align: center;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 #account-message,
 #post-message {
     margin-top: 0.9rem;
     text-align: center;
-    color: var(--moss-light);
+    color: var(--bark-light);
     min-height: 1.5rem;
     font-weight: 500;
 }
@@ -537,8 +599,8 @@ body {
     margin-top: 0.75rem;
     margin-bottom: 1rem;
     text-align: right;
-    color: var(--moss-light);
-    font-size: 0.85rem;
+    color: var(--bark-light);
+    font-size: 0.82rem;
     font-weight: 600;
 }
 
@@ -547,14 +609,10 @@ body {
 }
 
 #post-feed .idea-card {
-    border-left-color: var(--moss-light);
+    border-top-color: var(--bark);
 }
 
-#post-feed .idea-card::before {
-    background: var(--moss-light);
-}
-
-/* --- Auth Forms Layout --- */
+/* ---- Auth Forms Layout ---- */
 .auth-forms {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -562,15 +620,15 @@ body {
 }
 
 .auth-form-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.1rem;
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
     color: var(--moss);
     margin-bottom: 0.75rem;
 }
 
 .account-status.signed-in {
-    background: linear-gradient(135deg, rgba(27, 67, 50, 0.12), rgba(45, 106, 79, 0.15));
-    border-color: var(--moss-light);
+    background: rgba(45, 90, 39, 0.06);
+    border-color: var(--moss);
 }
 
 .sign-out-btn {
@@ -579,18 +637,18 @@ body {
     margin-right: auto;
 }
 
-/* --- Message Feedback --- */
+/* ---- Message Feedback ---- */
 .msg-success {
     color: var(--moss) !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
 }
 
 .msg-error {
-    color: #9b2c2c !important;
-    font-weight: 600 !important;
+    color: var(--danger) !important;
+    font-weight: 700 !important;
 }
 
-/* --- Post Form Footer --- */
+/* ---- Post Form Footer ---- */
 .post-form-footer {
     display: flex;
     align-items: center;
@@ -604,31 +662,31 @@ body {
 }
 
 .char-count {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
-    color: var(--moss-light);
+    color: var(--bark-light);
 }
 
 .char-warn {
-    color: #c53030;
+    color: var(--danger);
 }
 
-/* --- Post Section --- */
+/* ---- Post Section ---- */
 .post-section {
     max-width: 900px;
 }
 
-/* --- New Card Animation --- */
+/* ---- New Card Animation ---- */
 @keyframes card-highlight {
-    0% { box-shadow: 0 0 0 3px rgba(212, 224, 155, 0.8); }
-    100% { box-shadow: 0 2px 12px rgba(27, 67, 50, 0.08); }
+    0% { box-shadow: 0 0 0 4px rgba(45, 90, 39, 0.3); }
+    100% { box-shadow: inset 0 0 30px rgba(74, 55, 40, 0.04), 2px 3px 10px rgba(74, 55, 40, 0.1); }
 }
 
 .card-new {
     animation: card-highlight 2s ease-out;
 }
 
-/* --- Role Picker --- */
+/* ---- Role Picker ---- */
 .role-picker {
     display: flex;
     gap: 0.5rem;
@@ -639,18 +697,20 @@ body {
     flex: 1;
     padding: 0.6rem 1rem;
     border: 2px solid var(--cream-dark);
-    border-radius: 10px;
+    border-radius: 2px;
     background: var(--cream);
     color: var(--bark);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: all 0.25s ease;
 }
 
 .role-btn:hover {
-    border-color: var(--sage);
+    border-color: var(--moss);
 }
 
 .role-btn.active {
@@ -659,20 +719,20 @@ body {
     border-color: var(--moss);
 }
 
-/* --- Mentor Fields --- */
+/* ---- Mentor Fields ---- */
 .mentor-fields {
-    border-top: 1px dashed var(--cream-dark);
+    border-top: 2px dashed var(--cream-dark);
     padding-top: 1rem;
     margin-top: 0.25rem;
 }
 
 .mentor-fields select {
     width: 100%;
-    padding: 0.7rem 0.8rem;
+    padding: 0.65rem 0.8rem;
     border: 2px solid var(--cream-dark);
-    border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
+    border-radius: 2px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.88rem;
     color: var(--bark);
     background: var(--cream);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -680,98 +740,104 @@ body {
 
 .mentor-fields select:focus {
     outline: none;
-    border-color: var(--sage);
-    box-shadow: 0 0 8px rgba(163, 177, 138, 0.35);
+    border-color: var(--moss);
+    box-shadow: 0 0 0 3px rgba(45, 90, 39, 0.12);
 }
 
-/* --- Role Badges --- */
+/* ---- Role Badges ---- */
 .role-badge {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 700;
-    padding: 0.2rem 0.55rem;
-    border-radius: 20px;
-    letter-spacing: 0.3px;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
     vertical-align: middle;
     margin-left: 0.3rem;
+    text-transform: uppercase;
 }
 
 .role-student {
-    background: linear-gradient(135deg, rgba(212, 224, 155, 0.4), rgba(163, 177, 138, 0.3));
-    color: var(--moss);
-    border: 1px solid rgba(163, 177, 138, 0.5);
+    background: rgba(74, 55, 40, 0.08);
+    color: var(--bark);
+    border: 1px solid rgba(74, 55, 40, 0.2);
 }
 
 .role-mentor {
-    background: linear-gradient(135deg, rgba(27, 67, 50, 0.15), rgba(45, 106, 79, 0.2));
+    background: rgba(45, 90, 39, 0.1);
     color: var(--moss);
-    border: 1px solid var(--moss-light);
+    border: 1px solid rgba(45, 90, 39, 0.3);
 }
 
-/* --- Interested Button --- */
+/* ---- Interested Button ---- */
 .interested-btn {
     display: inline-block;
     margin-top: 0.75rem;
-    padding: 0.5rem 1.2rem;
-    background: linear-gradient(135deg, var(--moss) 0%, var(--moss-light) 100%);
+    padding: 0.45rem 1.1rem;
+    background: var(--moss);
     color: var(--cream);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.78rem;
     font-weight: 700;
-    border: none;
-    border-radius: 10px;
+    border: 2px solid var(--moss);
+    border-radius: 2px;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.2s ease;
 }
 
 .interested-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(27, 67, 50, 0.25);
+    box-shadow: 2px 4px 12px rgba(45, 90, 39, 0.2);
+    background: var(--moss-light);
 }
 
 .interested-active {
-    background: linear-gradient(135deg, var(--sage) 0%, var(--sage-light) 100%);
-    color: var(--moss);
+    background: var(--sage);
+    border-color: var(--sage);
+    color: var(--bark);
     cursor: default;
 }
 
-/* --- Connect Button --- */
+/* ---- Connect Button ---- */
 .connect-btn {
     display: inline-block;
-    padding: 0.45rem 1rem;
-    background: linear-gradient(135deg, var(--moss-light) 0%, var(--sage) 100%);
-    color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.8rem;
+    padding: 0.4rem 0.9rem;
+    background: var(--bark);
+    color: var(--cream);
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.75rem;
     font-weight: 700;
-    border: none;
-    border-radius: 8px;
+    border: 2px solid var(--bark);
+    border-radius: 2px;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.2s ease;
 }
 
 .connect-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(27, 67, 50, 0.2);
+    box-shadow: 2px 4px 10px rgba(74, 55, 40, 0.2);
+    background: var(--bark-light);
 }
 
 .gallery-item .connect-btn {
     margin: 0 1rem 0.75rem;
 }
 
-/* --- Modal --- */
+/* ---- Modal ---- */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(27, 67, 50, 0.5);
-    backdrop-filter: blur(4px);
+    background: rgba(74, 55, 40, 0.55);
+    backdrop-filter: blur(3px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -780,22 +846,22 @@ body {
 
 .modal-content {
     background: var(--white);
-    border-radius: 16px;
+    border: 3px double var(--bark);
+    border-radius: 2px;
     padding: 2rem;
     width: 90%;
     max-width: 500px;
-    border-left: 5px solid var(--sage);
-    box-shadow: 0 12px 40px rgba(27, 67, 50, 0.3);
+    box-shadow: 4px 6px 30px rgba(74, 55, 40, 0.3);
 }
 
 .modal-content input,
 .modal-content textarea {
     width: 100%;
-    padding: 0.7rem 0.8rem;
+    padding: 0.65rem 0.8rem;
     border: 2px solid var(--cream-dark);
-    border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
+    border-radius: 2px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.88rem;
     color: var(--bark);
     background: var(--cream);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -804,8 +870,8 @@ body {
 .modal-content input:focus,
 .modal-content textarea:focus {
     outline: none;
-    border-color: var(--sage);
-    box-shadow: 0 0 8px rgba(163, 177, 138, 0.35);
+    border-color: var(--moss);
+    box-shadow: 0 0 0 3px rgba(45, 90, 39, 0.12);
 }
 
 .modal-content textarea {
@@ -814,10 +880,12 @@ body {
 
 .modal-content label {
     display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--moss);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--bark);
     margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
 }
 
 .modal-actions {
@@ -831,10 +899,15 @@ body {
 }
 
 .modal-cancel-btn {
-    background: linear-gradient(135deg, #5f715f 0%, #728472 100%) !important;
+    background: var(--bark-light) !important;
+    border-color: var(--bark-light) !important;
 }
 
-/* --- Detail Page --- */
+.modal-cancel-btn:hover {
+    background: var(--bark) !important;
+}
+
+/* ---- Detail Page ---- */
 .detail-page {
     max-width: 760px;
     margin: 0 auto;
@@ -843,10 +916,12 @@ body {
 
 .back-link {
     display: inline-block;
-    color: var(--moss-light);
+    color: var(--bark-light);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 1.25rem;
     transition: color 0.2s ease;
 }
@@ -857,26 +932,49 @@ body {
 
 .detail-card {
     background: var(--white);
-    border-radius: 16px;
+    border: 3px double var(--bark);
+    border-radius: 2px;
     padding: 2rem;
-    border-left: 5px solid var(--sage);
-    box-shadow: 0 2px 12px rgba(27, 67, 50, 0.08);
+    box-shadow: inset 0 0 30px rgba(74, 55, 40, 0.04), 2px 3px 10px rgba(74, 55, 40, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
-.detail-card.seed { border-left-color: #8b6914; }
-.detail-card.sprout { border-left-color: #7cb342; }
-.detail-card.oak { border-left-color: var(--moss); }
+.detail-card.seed { border-top: 4px solid #8b6914; }
+.detail-card.sprout { border-top: 4px solid #7cb342; }
+.detail-card.oak { border-top: 4px solid var(--moss); }
+
+/* VERIFIED stamp on detail page Oak cards */
+.detail-card.oak::after {
+    content: 'VERIFIED';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    font-family: 'Courier Prime', monospace;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--stamp-green);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    border: 5px solid var(--stamp-green);
+    border-radius: 6px;
+    padding: 0.2rem 1rem;
+    pointer-events: none;
+    z-index: 1;
+    white-space: nowrap;
+}
 
 .detail-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.8rem;
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
     color: var(--moss);
     margin-bottom: 0.5rem;
 }
 
 .detail-desc {
-    font-size: 1rem;
-    color: #5a5a4a;
+    font-size: 0.95rem;
+    color: var(--bark-light);
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -890,20 +988,20 @@ body {
 
 .detail-actions .interested-btn,
 .detail-actions .connect-btn {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.55rem 1.4rem;
+    font-size: 0.85rem;
 }
 
-/* --- Interest List --- */
+/* ---- Interest List ---- */
 .interest-list {
-    border-top: 1px dashed var(--cream-dark);
+    border-top: 2px dashed var(--cream-dark);
     padding-top: 1rem;
 }
 
 .interest-list h4 {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Caveat', cursive;
     color: var(--moss);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
 }
 
@@ -913,7 +1011,7 @@ body {
 
 .interest-list li {
     padding: 0.4rem 0;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--bark);
     border-bottom: 1px solid var(--cream-dark);
 }
@@ -922,29 +1020,30 @@ body {
     border-bottom: none;
 }
 
-/* --- Inbox --- */
+/* ---- Inbox ---- */
 .inbox-card {
-    border-left-color: var(--sage) !important;
+    border-top-color: var(--sage) !important;
 }
 
 .inbox-card .connect-btn {
     margin-top: 0.75rem;
 }
 
-/* --- Footer --- */
+/* ---- Footer ---- */
 .greenhouse-footer {
-    background: var(--moss);
+    background: var(--bark);
     color: var(--sage-light);
     text-align: center;
     padding: 1.5rem 2rem;
-    font-size: 0.9rem;
-    letter-spacing: 0.3px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border-top: 3px double var(--sage);
 }
 
-/* Responsive */
+/* ---- Responsive ---- */
 @media (max-width: 768px) {
     .logo h1 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     .tagline {
@@ -952,7 +1051,7 @@ body {
     }
 
     .dashboard-intro h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .idea-grid,
@@ -989,6 +1088,11 @@ body {
     #post-form {
         padding: 1.25rem;
     }
+
+    .idea-card.oak::after {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -997,7 +1101,12 @@ body {
     }
 
     .header-nav {
-        gap: 1rem;
+        gap: 0.75rem;
+    }
+
+    .header-nav a {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
     }
 
     .dashboard-intro {

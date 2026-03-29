@@ -161,6 +161,20 @@ function getStageClass(stage) {
   return stage.toLowerCase();
 }
 
+function renderSunlightMeter(availability) {
+  const hours = parseInt(availability, 10) || 5;
+  const totalLeaves = 5;
+  const litCount = Math.round((hours / 10) * totalLeaves);
+  let html = '<div class="sunlight-meter">';
+  for (let i = 0; i < totalLeaves; i++) {
+    const lit = i < litCount ? " lit" : "";
+    html += `<span class="leaf${lit}">&#127811;</span>`;
+  }
+  html += `<span class="sunlight-meter-label">${escapeHtml(availability)}</span>`;
+  html += "</div>";
+  return html;
+}
+
 function showMessage(elementId, text, isSuccess) {
   const el = document.getElementById(elementId);
   if (!el) return;
@@ -353,7 +367,7 @@ function renderGreenhouse() {
           <span class="icon-symbol">${getStageIcon(project.stage)}</span>
           <span class="stage-label">${escapeHtml(project.stage)}</span>
         </div>
-        <span class="availability-badge">${escapeHtml(project.availability)}</span>
+        ${renderSunlightMeter(project.availability)}
       </div>
       <h3 class="card-title">${escapeHtml(project.title)}</h3>
       <p class="card-desc">${escapeHtml(project.description)}</p>
@@ -367,6 +381,7 @@ function renderGreenhouse() {
     seedVault.appendChild(article);
   });
 }
+
 
 /* ---- Account section ---- */
 
@@ -771,12 +786,14 @@ function setupPostForm() {
 
 function setupGlobalClicks() {
   document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".connect-btn");
-    if (btn) {
-      const creator = btn.dataset.creator || "";
-      const subject = btn.dataset.subject || "";
+    const connectBtn = e.target.closest(".connect-btn");
+    if (connectBtn) {
+      const creator = connectBtn.dataset.creator || "";
+      const subject = connectBtn.dataset.subject || "";
       openMessageModal(creator, subject);
+      return;
     }
+
   });
 }
 
@@ -862,7 +879,7 @@ function initDetailPage() {
           <span class="icon-symbol" style="font-size:2.5rem;">${getStageIcon(project.stage)}</span>
           <span class="stage-label">${escapeHtml(project.stage)}</span>
         </div>
-        <span class="availability-badge">${escapeHtml(project.availability)}</span>
+        ${renderSunlightMeter(project.availability)}
       </div>
       <h2 class="detail-title">${escapeHtml(project.title)}</h2>
       <p class="detail-desc">${escapeHtml(project.description)}</p>

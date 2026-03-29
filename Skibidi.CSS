@@ -628,6 +628,309 @@ body {
     animation: card-highlight 2s ease-out;
 }
 
+/* --- Role Picker --- */
+.role-picker {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.role-btn {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--cream-dark);
+    border-radius: 10px;
+    background: var(--cream);
+    color: var(--bark);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.role-btn:hover {
+    border-color: var(--sage);
+}
+
+.role-btn.active {
+    background: var(--moss);
+    color: var(--cream);
+    border-color: var(--moss);
+}
+
+/* --- Mentor Fields --- */
+.mentor-fields {
+    border-top: 1px dashed var(--cream-dark);
+    padding-top: 1rem;
+    margin-top: 0.25rem;
+}
+
+.mentor-fields select {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    border: 2px solid var(--cream-dark);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--bark);
+    background: var(--cream);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mentor-fields select:focus {
+    outline: none;
+    border-color: var(--sage);
+    box-shadow: 0 0 8px rgba(163, 177, 138, 0.35);
+}
+
+/* --- Role Badges --- */
+.role-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+    vertical-align: middle;
+    margin-left: 0.3rem;
+}
+
+.role-student {
+    background: linear-gradient(135deg, rgba(212, 224, 155, 0.4), rgba(163, 177, 138, 0.3));
+    color: var(--moss);
+    border: 1px solid rgba(163, 177, 138, 0.5);
+}
+
+.role-mentor {
+    background: linear-gradient(135deg, rgba(27, 67, 50, 0.15), rgba(45, 106, 79, 0.2));
+    color: var(--moss);
+    border: 1px solid var(--moss-light);
+}
+
+/* --- Interested Button --- */
+.interested-btn {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1.2rem;
+    background: linear-gradient(135deg, var(--moss) 0%, var(--moss-light) 100%);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.interested-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(27, 67, 50, 0.25);
+}
+
+.interested-active {
+    background: linear-gradient(135deg, var(--sage) 0%, var(--sage-light) 100%);
+    color: var(--moss);
+    cursor: default;
+}
+
+/* --- Connect Button --- */
+.connect-btn {
+    display: inline-block;
+    padding: 0.45rem 1rem;
+    background: linear-gradient(135deg, var(--moss-light) 0%, var(--sage) 100%);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.connect-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(27, 67, 50, 0.2);
+}
+
+.gallery-item .connect-btn {
+    margin: 0 1rem 0.75rem;
+}
+
+/* --- Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(27, 67, 50, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    border-left: 5px solid var(--sage);
+    box-shadow: 0 12px 40px rgba(27, 67, 50, 0.3);
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    border: 2px solid var(--cream-dark);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--bark);
+    background: var(--cream);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    outline: none;
+    border-color: var(--sage);
+    box-shadow: 0 0 8px rgba(163, 177, 138, 0.35);
+}
+
+.modal-content textarea {
+    resize: vertical;
+}
+
+.modal-content label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--moss);
+    margin-bottom: 0.3rem;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.modal-actions .seed-submit-btn {
+    flex: 1;
+}
+
+.modal-cancel-btn {
+    background: linear-gradient(135deg, #5f715f 0%, #728472 100%) !important;
+}
+
+/* --- Detail Page --- */
+.detail-page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--moss-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--moss);
+}
+
+.detail-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    border-left: 5px solid var(--sage);
+    box-shadow: 0 2px 12px rgba(27, 67, 50, 0.08);
+}
+
+.detail-card.seed { border-left-color: #8b6914; }
+.detail-card.sprout { border-left-color: #7cb342; }
+.detail-card.oak { border-left-color: var(--moss); }
+
+.detail-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    color: var(--moss);
+    margin-bottom: 0.5rem;
+}
+
+.detail-desc {
+    font-size: 1rem;
+    color: #5a5a4a;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.detail-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.detail-actions .interested-btn,
+.detail-actions .connect-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* --- Interest List --- */
+.interest-list {
+    border-top: 1px dashed var(--cream-dark);
+    padding-top: 1rem;
+}
+
+.interest-list h4 {
+    font-family: 'DM Serif Display', serif;
+    color: var(--moss);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.interest-list ul {
+    list-style: none;
+}
+
+.interest-list li {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+    color: var(--bark);
+    border-bottom: 1px solid var(--cream-dark);
+}
+
+.interest-list li:last-child {
+    border-bottom: none;
+}
+
+/* --- Inbox --- */
+.inbox-card {
+    border-left-color: var(--sage) !important;
+}
+
+.inbox-card .connect-btn {
+    margin-top: 0.75rem;
+}
+
 /* --- Footer --- */
 .greenhouse-footer {
     background: var(--moss);
@@ -670,9 +973,14 @@ body {
 
     .seed-form-section,
     .idea-garden,
-    .passion-gallery {
+    .passion-gallery,
+    .detail-page {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+
+    .detail-actions {
+        flex-direction: column;
     }
 
     #seed-form,

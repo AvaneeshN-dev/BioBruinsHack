@@ -1,7 +1,7 @@
-/* ============================================
+/*
    GREENHOUSE DASHBOARD — Skibidi.css
-   Vintage Field Guide / Explorer's Notebook
-   ============================================ */
+   
+    */
 
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Caveat:wght@400;700&display=swap');
 
@@ -59,7 +59,7 @@ body {
         radial-gradient(ellipse at 75% 25%, rgba(74, 55, 40, 0.03) 0%, transparent 60%);
 }
 
-/* ---- Header ---- */
+/* ---- Dashboard ---- */
 .greenhouse-header {
     background: linear-gradient(135deg, var(--bark) 0%, var(--bark-light) 100%);
     padding: 1.25rem 2rem;
@@ -184,7 +184,7 @@ body {
     background: radial-gradient(circle, var(--moss) 40%, #1a3d16 100%);
 }
 
-/* ---- Shared section headings ---- */
+/* ---- This is the section heading and margins ---- */
 .section-title {
     font-family: 'Caveat', cursive;
     font-size: 2.2rem;
